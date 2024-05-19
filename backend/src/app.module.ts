@@ -34,9 +34,8 @@ import { BookingsModule } from './bookings/bookings.module';
   controllers: [AppController],
   providers: [AppService],
 })
-
 export class AppModule implements OnModuleInit {
-  constructor(private readonly connection: Connection) { }
+  constructor(private readonly connection: Connection) {}
 
   async onModuleInit() {
     try {

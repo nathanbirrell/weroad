@@ -4,6 +4,8 @@ import { TravelsService } from './travels.service';
 import { Travel } from './entities/travel.entity';
 
 // Mock data for travels
+// TODO: move to a fixtures file somewhere
+// TODO: consider replacing mocked responses with proper integration tests here
 const mockTravels: Travel[] = [
   {
     id: '1',
@@ -14,6 +16,8 @@ const mockTravels: Travel[] = [
     price: 1000,
     slug: 'iceland-hunting-northern-lights',
     moods: { nature: 80, relax: 20, history: 90, culture: 30, party: 10 },
+    maxCapacity: 8,
+    bookedSpots: 0,
   },
 ];
 

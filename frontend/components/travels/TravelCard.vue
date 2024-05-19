@@ -2,7 +2,7 @@
 <template>
     <div class="relative rounded overflow-hidden shadow-lg bg-white">
         <div class="absolute top-0 right-0 mt-2 mr-2 bg-red-500 text-white px-2 py-1 rounded"
-            v-if="!isTravelBookable(travel)">
+            v-if="!isBookable(travel)">
             Sold Out
         </div>
         <div class="px-6 py-4 pt-10">
@@ -14,11 +14,11 @@
             <p class="text-gray-600 text-sm">Ending: {{ formatDate(travel.endingDate) }}</p>
             <p class="text-gray-600 text-sm">Price: ${{ (travel.price / 100).toFixed(2) }}</p>
             <p class="text-gray-600 text-sm">Available Spots: {{ calculateAvailableSpots(travel) }}</p>
-            <button class="bg-blue-500 text-white px-4 py-1 mt-3 rounded" v-if="isTravelBookable(travel)"
+            <button class="bg-red-700 text-white px-4 py-1 mt-3 rounded" v-if="isBookable(travel)"
                 @click="openBookingModal">Book Now</button>
         </div>
         <div class="px-6 pt-4 pb-2">
-            <span v-for="(value, key) in getFilteredMoods(travel.moods)" :key="key"
+            <span v-for="(value, key) in getMoods(travel.moods)" :key="key"
                 class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                 #{{ key }}: {{ value }}
             </span>
@@ -56,7 +56,7 @@ const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString(undefined, options);
 }
 
-const getFilteredMoods = (moods: Moods) => {
+const getMoods = (moods: Moods) => {
     // Filter out unwanted keys (e.g., '__typename')
     return Object.fromEntries(
         Object.entries(moods).filter(([key]) => key !== '__typename')
@@ -67,12 +67,12 @@ const calculateAvailableSpots = (travel: Travel) => {
     return travel.maxCapacity - travel.bookedSpots;
 }
 
-const isTravelBookable = (travel: Travel) => {
+const isBookable = (travel: Travel) => {
     return calculateAvailableSpots(travel) > 0;
 }
 
 const openBookingModal = () => {
-    if (isTravelBookable(props.travel)) {
+    if (isBookable(props.travel)) {
         props.openModal(props.travel);
     }
 };

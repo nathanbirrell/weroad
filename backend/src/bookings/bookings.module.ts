@@ -10,4 +10,4 @@ import { Travel } from '../travels/entities/travel.entity';
   imports: [TypeOrmModule.forFeature([Booking, Travel])],
   providers: [BookingsResolver, BookingsService],
 })
-export class BookingsModule { }
+export class BookingsModule {}

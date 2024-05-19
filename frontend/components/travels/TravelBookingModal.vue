@@ -15,7 +15,7 @@
           :max="maxAvailableSpots" />
         <CountdownTimer v-if="showCountdown" />
         <div class="w-full text-right">
-          <button class="bg-blue-500 text-white px-4 py-1 mt-3 rounded" @click="confirmBooking(selectedTravel)">Confirm
+          <button class="bg-red-700 text-white px-4 py-1 mt-3 rounded" @click="confirmBooking(selectedTravel)">Confirm
             Booking</button>
         </div>
       </div>

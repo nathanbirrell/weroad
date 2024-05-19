@@ -43,8 +43,8 @@
         id="maxCapacity" required />
     </div>
     <div class="flex justify-between">
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Create Travel</button>
-      <button @click="handleToHome" class="bg-blue-500 text-white px-4 py-2 rounded">Cancel</button>
+      <button type="submit" class="bg-red-700 text-white px-4 py-2 rounded">Create Travel</button>
+      <button @click="handleToHome" class="bg-red-700 text-white px-4 py-2 rounded">Cancel</button>
     </div>
   </form>
 </template>

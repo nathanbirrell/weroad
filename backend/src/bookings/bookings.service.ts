@@ -13,7 +13,7 @@ export class BookingsService {
     @InjectRepository(Travel)
     private travelsRepository: Repository<Travel>,
     @InjectConnection() private connection: Connection,
-  ) { }
+  ) {}
 
   async createBooking(
     userId: string,

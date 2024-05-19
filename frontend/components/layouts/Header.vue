@@ -2,10 +2,11 @@
 <template>
   <nav className="navbar flex bg-base-100 mx-auto max-w-7xl mt-4 p-4 shadow-xl rounded-box justify-between">
     <div className="navbar-start">
-      <button @click="handleToHome" class="bg-blue-500 text-white px-4 py-2 rounded-[50%]">TRAVEL</button>
+      <button @click="handleToHome" class="px-4 py-2 font-semibold">WeRoad Travel</button>
     </div>
     <div className="navbar-end">
-      <button @click="handleToNewTravel" class="bg-blue-500 text-white px-4 py-2 rounded">Create New Travel</button>
+      <!-- TODO: only show "Create" button for admin users -->
+      <button @click="handleToNewTravel" class="bg-red-700 text-white px-4 py-2 rounded">+ Create New Travel</button>
     </div>
   </nav>
 </template>

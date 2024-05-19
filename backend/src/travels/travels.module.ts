@@ -7,6 +7,6 @@ import { TravelsResolver } from './travels.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Travel])],
-  providers: [TravelsService, TravelsResolver]
+  providers: [TravelsService, TravelsResolver],
 })
-export class TravelsModule { }
+export class TravelsModule {}

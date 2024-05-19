@@ -47,6 +47,7 @@ export function useTravels() {
     const bookTravel = async (userId: string, travelId: string, spots: number) => {
         try {
             const { data } = await $apollo.mutate({
+                // TODO: lint graphql queries
                 mutation: gql`
                     mutation createBooking($createBookingInput: CreateBookingInput!) {
                         createBooking(createBookingInput: $createBookingInput) {
